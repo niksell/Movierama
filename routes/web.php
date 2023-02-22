@@ -18,9 +18,11 @@ use Illuminate\Support\Facades\Route;
 */
 
 Route::get('/', [HomeController::class, 'home'])->name('home');
-Route::get('/sort_by_date', [HomeController::class, 'sdate'])
-Route::get('/sort_by_likes', [HomeController::class, 'slike'])
-Route::get('/sort_by_dislikes', [HomeController::class, 'sdid'])
+Route::get('/sort/{sort}', [HomeController::class, 'sort']);
+Route::get('/movies/{id}', [HomeController::class, 'userMovies']);
+// Route::get('/sort_by_date', [HomeController::class, 'sdate'])
+// Route::get('/sort_by_likes', [HomeController::class, 'slike'])
+// Route::get('/sort_by_dislikes', [HomeController::class, 'sdid'])
 
 Route::get('/dashboard', function () {
     return view('dashboard');

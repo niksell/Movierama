@@ -70,13 +70,11 @@
                         <div  class="scale-100 p-6 bg-white dark:bg-gray-800/50 dark:bg-gradient-to-bl from-gray-700/50 via-solid dark:ring-1 dark:ring-inset dark:ring-white/5 rounded-lg shadow-2xl shadow-gray-500/20 dark:shadow-none flex motion-safe:hover:scale-[1.01] transition-all duration-250 focus:outline focus:outline-2 focus:outline-red-500">
                             <div>
                             <a>Sort by:</a>
-                            <a href="{{ url('/dashboard') }}" class="font-semibold text-gray-600 hover:text-gray-900 dark:text-gray-400 dark:hover:text-white focus:outline focus:outline-2 focus:rounded-sm focus:outline-red-500">Date</a>
+                            <a href="/sort/date" class="font-semibold text-gray-600 hover:text-gray-900 dark:text-gray-400 dark:hover:text-white focus:outline focus:outline-2 focus:rounded-sm focus:outline-red-500">Date</a>
 
-                            <a href="{{ route('profile.edit') }}" class="ml-4 font-semibold text-gray-600 hover:text-gray-900 dark:text-gray-400 dark:hover:text-white focus:outline focus:outline-2 focus:rounded-sm focus:outline-red-500">Likes</a>
+                            <a href="/sort/like" class="ml-4 font-semibold text-gray-600 hover:text-gray-900 dark:text-gray-400 dark:hover:text-white focus:outline focus:outline-2 focus:rounded-sm focus:outline-red-500">Likes</a>
 
-                            <a href="route('/logout')"
-                                    onclick="event.preventDefault();
-                                                document.getElementById('logout-form').submit();" class="ml-4 font-semibold text-gray-600 hover:text-gray-900 dark:text-gray-400 dark:hover:text-white focus:outline focus:outline-2 focus:rounded-sm focus:outline-red-500">
+                            <a href="/sort/hates" class="ml-4 font-semibold text-gray-600 hover:text-gray-900 dark:text-gray-400 dark:hover:text-white focus:outline focus:outline-2 focus:rounded-sm focus:outline-red-500">
                                 Hates
                             </a>
                             </div>
@@ -90,7 +88,7 @@
                             <div>
         
                                 <h1 class="mt-12 text-xl font-semibold text-gray-900 dark:text-white">{!! $movie->title !!}</h1>
-                                <h3 class="mt-6 text-xl font-semibold text-gray-900 dark:text-white">Posted By:  <a href="#" >{!! $movie->user->name !!}</a>  {!!$days_count!!} Days Ago</h3>
+                                <h3 class="mt-6 text-xl font-semibold text-gray-900 dark:text-white">Posted By:  <a href="/movies/{{$movie->user->id}}" >{!! $movie->user->name !!}</a>  {!!$days_count!!} Days Ago</h3>
                                 <p class="mt-4 font-semibold text-gray-900 dark:text-white text-sm leading-relaxed">
                                     {!! $movie->description !!}
                                 </p>
